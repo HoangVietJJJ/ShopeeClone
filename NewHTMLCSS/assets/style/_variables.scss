@@ -1,0 +1,12 @@
+$white-color       : #fff;
+$black-color       : #000;
+$text-color        : #333;
+$primary-color     : #ee4d2d;
+$primary-color-rgba: rgba(238, 77, 45, 0.1);
+$border-color      : #dbdbdb;
+$scrollbar-track   : #d2cdcd;
+$star-gold         : #ffce3e;
+
+$header-height : 120px;
+$navbar-height : 32px;
+$header-search : calc(#{$header-height} - #{$navbar-height});
