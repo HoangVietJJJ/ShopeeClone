@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'base';
+@import 'responsive';
 // @import '../fonts/fontawesome-free-6.7.1-web/scss/fontawesome.scss';
 
 // Header
@@ -7,9 +8,17 @@
     height          : $header-height;
     background-image: linear-gradient(-180deg, #f53d2d, #f63);
 
+    @include mobile-and-tablet {
+        height: $header-height-mobile-tablet;
+    }
+
     &__navbar {
         display        : flex;
         justify-content: space-between;
+
+        @include mobile-and-tablet {
+            display: none;
+        }
 
         &-list {
             list-style  : none;
@@ -378,8 +387,16 @@
         align-items: center;
         margin     : 0 8px;
 
+        @include mobile-and-tablet {
+            height: $header-search-mobile-tablet;
+        }
+
         &-logo {
             width: 200px;
+
+            @include tablet {
+                display: none;
+            }
 
             &-link {
                 text-decoration: none;
@@ -586,6 +603,11 @@
         &-cart {
             width     : 150px;
             text-align: center;
+
+            @include tablet {
+                width     : 80px;
+                text-align: right;
+            }
 
             &-wrap {
                 position: relative;
@@ -862,6 +884,10 @@
         align-items     : center;
         padding         : 12px 22px;
         border-radius   : 2px;
+
+        @include mobile-and-tablet {
+            display: none;
+        }
 
         &__label {
             font-size   : 1.4rem;
