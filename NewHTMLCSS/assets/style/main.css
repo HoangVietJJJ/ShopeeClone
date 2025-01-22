@@ -201,6 +201,7 @@ html {
 .header {
   height: 120px;
   background-image: linear-gradient(-180deg, #f53d2d, #f63);
+  /* Header sort bar */
 }
 @media screen and (max-width: 1023px) {
   .header {
@@ -817,8 +818,8 @@ html {
   margin: 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1.5;
-  line-clamp: 1.5;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
   overflow: hidden;
 }
 .header__search-cart-item-head-price {
@@ -861,6 +862,53 @@ html {
 .header__search-cart-view-cart:hover {
   background-color: #F05D41;
 }
+.header__sort-bar {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  height: 46px;
+  background-color: #fff;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  display: none;
+}
+@media screen and (max-width: 1023px) {
+  .header__sort-bar {
+    display: flex;
+  }
+}
+.header__sort-item {
+  flex: 1;
+}
+.header__sort-item:first-child .header__sort-link:before {
+  display: none;
+}
+.header__sort-item--active .header__sort-link {
+  color: #ee4d2d;
+}
+.header__sort-link {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.4rem;
+  display: block;
+  height: 100%;
+  line-height: 46px;
+  text-align: center;
+}
+.header__sort-link:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 60%;
+  border-left: 1px solid #e5e5e5;
+  transform: translateY(-50%);
+}
 
 /* App container */
 .app__container {
@@ -869,7 +917,7 @@ html {
 }
 @media screen and (max-width: 1023px) {
   .app__container {
-    margin-top: 68px;
+    margin-top: calc(68px + 46px);
   }
 }
 .app__container-content {

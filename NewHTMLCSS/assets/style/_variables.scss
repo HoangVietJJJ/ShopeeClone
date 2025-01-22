@@ -14,3 +14,4 @@ $header-search : calc(#{$header-height} - #{$navbar-height});
 $header-height-mobile-tablet : 68px;
 $navbar-height-mobile-tablet : 0px;
 $header-search-mobile-tablet : calc(#{$header-height-mobile-tablet} - #{$navbar-height-mobile-tablet});
+$header-sort-bar-height      : 46px;

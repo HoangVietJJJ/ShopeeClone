@@ -764,8 +764,8 @@
 
                         display              : -webkit-box;
                         -webkit-box-orient   : vertical;
-                        -webkit-line-clamp   : 1.5;
-                        line-clamp           : 1.5;
+                        -webkit-line-clamp   : 1;
+                        line-clamp           : 1;
                         overflow             : hidden;
                         // max-width         : 240px;
                         // white-space  : nowrap;
@@ -828,6 +828,67 @@
             }
         }
     }
+
+    /* Header sort bar */
+    &__sort-bar {
+        position           : fixed;
+        top                : $header-height-mobile-tablet;
+        left               : 0;
+        right              : 0;
+        height             : $header-sort-bar-height;
+        background-color   : $white-color;
+        list-style         : none;
+        // display         : flex;
+        margin             : 0;
+        padding-left       : 0;
+        border-top         : 1px solid #e5e5e5;
+        border-bottom      : 1px solid #e5e5e5;
+        display            : none;
+
+        @include mobile-and-tablet {
+            display: flex;
+        }
+    }
+
+    &__sort-item {
+        flex: 1;
+
+        &:first-child {
+            .header__sort-link {
+
+                &:before {
+                    display: none;
+                }
+            }
+        }
+
+        &--active {
+            .header__sort-link {
+                color: $primary-color;
+            }
+        }
+    }
+
+    &__sort-link {
+        position       : relative;
+        text-decoration: none;
+        color          : $text-color;
+        font-size      : 1.4rem;
+        display        : block;
+        height         : 100%;
+        line-height    : $header-sort-bar-height;
+        text-align     : center;
+
+        &:before {
+            content    : "";
+            position   : absolute;
+            top        : 50%;
+            left       : 0;
+            height     : 60%;
+            border-left: 1px solid #e5e5e5;
+            transform  : translateY(-50%);
+        }
+    }
 }
 
 /* App container */
@@ -835,7 +896,7 @@
     background-color: #F5F5F5;
 
     @include mobile-and-tablet {
-        margin-top: $header-height-mobile-tablet;
+        margin-top: calc(#{$header-height-mobile-tablet} + #{$header-sort-bar-height});
     }
 
     &-content {
