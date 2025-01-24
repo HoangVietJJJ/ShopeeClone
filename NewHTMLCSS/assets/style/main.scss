@@ -396,6 +396,19 @@
             height: $header-search-mobile-tablet;
         }
 
+        @include mobile {
+            justify-content: space-between;
+        }
+
+        &-mobile-search {
+            padding: 0 12px;
+
+            &-icon {
+                font-size: 2.6rem;
+                color    : $white-color;
+            }
+        }
+
         &-logo {
             width: 200px;
 
@@ -403,14 +416,28 @@
                 display: none;
             }
 
+            @include mobile {
+                width: unset;
+            }
+
             &-link {
                 text-decoration: none;
                 color          : transparent;
+                display        : block;
+                line-height    : 0;
             }
 
             &-img {
                 width: 150px;
                 color: $white-color;
+            }
+        }
+
+        &-checkbox {
+            &:checked {
+                ~.header__search-bar {
+                    display: flex;
+                }
             }
         }
 
@@ -421,6 +448,31 @@
             border-radius   : 2px;
             display         : flex;
             align-items     : center;
+
+            @keyframes mobileSearchSideIn {
+                from {
+                    opacity: 0;
+                    top    : calc(#{$header-height-mobile-tablet} / 2);
+                }
+
+                to {
+                    opacity: 1;
+                    top    : $header-height-mobile-tablet;
+                }
+            }
+
+            @include mobile {
+                display   : none;
+                position  : fixed;
+                top       : $header-height-mobile-tablet;
+                left      : 0;
+                right     : 0;
+                height    : 46px;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                z-index   : 1;
+                padding   : 0 16px;
+                animation : mobileSearchSideIn linear 0.3s;
+            }
         }
 
 
@@ -457,6 +509,14 @@
                 display         : none;
                 overflow        : hidden;
                 z-index         : 1;
+
+                @include mobile {
+                    position  : fixed;
+                    width     : 100%;
+                    top       : calc(#{$header-height-mobile-tablet} + #{$header-sort-bar-height});
+                    left      : 0;
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                }
 
                 &-heading {
                     margin           : 8px 12px;
@@ -548,6 +608,10 @@
                 left    : 0;
             }
 
+            @include mobile {
+                top: calc(100% + 32%);
+            }
+
             &-item {
                 padding: 12px 8px;
 
@@ -612,6 +676,10 @@
             @include tablet {
                 width     : 80px;
                 text-align: right;
+            }
+
+            @include mobile {
+                width: unset;
             }
 
             &-wrap {
