@@ -1,3 +1,6 @@
+/* Mobile & Tablet */
+/* Tablet */
+/* Mobile */
 * {
   box-sizing: inherit;
 }
@@ -172,6 +175,11 @@ html {
   list-style: none;
   margin: 0 12px;
 }
+@media screen and (max-width: 739px) {
+  .pagination-item {
+    margin: 0;
+  }
+}
 .pagination-item--active .pagination-item-link {
   color: #fff;
   background-color: #ee4d2d;
@@ -190,6 +198,12 @@ html {
   line-height: 30px;
   text-align: center;
   border-radius: 2px;
+}
+@media screen and (max-width: 739px) {
+  .pagination-item-link {
+    font-size: 1.6rem;
+    min-width: 36px;
+  }
 }
 .pagination-item-link--dots {
   cursor: default;

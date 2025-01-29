@@ -1,3 +1,6 @@
+/* Mobile & Tablet */
+/* Tablet */
+/* Mobile */
 .grid {
   width: 100%;
   display: block;
@@ -29,6 +32,12 @@
   /* >= Tablet */
   /* Low resolution PC > */
 }
+@media screen and (max-width: 739px) {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 @media (min-width: 740px) {
   .row {
     margin-left: -8px;
@@ -47,10 +56,24 @@
   margin-right: 0;
 }
 
+@media (min-width: 1113px) {
+  .row.sm-gutters {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+}
+
 @media (min-width: 1024px) and (max-width: 1239px) {
   .wide.row {
     margin-left: -12px;
     margin-right: -12px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1239px) {
+  .wide.row.sm-gutters {
+    margin-left: -5px;
+    margin-right: -5px;
   }
 }
 
@@ -76,10 +99,24 @@
   padding-right: 0;
 }
 
+@media (min-width: 1113px) {
+  .row.sm-gutters .col {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
 @media (min-width: 1024px) and (max-width: 1239px) {
   .wide.col {
     padding-left: 12px;
     padding-right: 12px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1239px) {
+  .wide.row.sm-gutters .col {
+    margin-left: -5px;
+    margin-right: -5px;
   }
 }
 

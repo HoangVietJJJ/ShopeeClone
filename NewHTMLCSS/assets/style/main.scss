@@ -3,6 +3,11 @@
 @import 'responsive';
 // @import '../fonts/fontawesome-free-6.7.1-web/scss/fontawesome.scss';
 
+
+.app {
+    overflow: hidden;
+}
+
 // Header
 .header {
     height          : $header-height;
@@ -402,6 +407,11 @@
 
         &-mobile-search {
             padding: 0 12px;
+            display: none;
+
+            @include mobile {
+                display: block;
+            }
 
             &-icon {
                 font-size: 2.6rem;
@@ -969,6 +979,10 @@
 
     &-content {
         padding-top: 36px;
+
+        // @include mobile {
+        //     margin: 0 4px;
+        // }
     }
 
     .category {
@@ -1286,8 +1300,8 @@
         }
 
         &__pagination {
-            margin-top   : 48px;
-            margin-bottom: 32px;
+            margin      : 48px 0 32px 0;
+            padding-left: 0;
         }
     }
 }
