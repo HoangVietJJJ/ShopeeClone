@@ -552,6 +552,7 @@ html {
 }
 .header__search-logo {
   width: 200px;
+  -webkit-tap-highlight-color: transparent;
 }
 @media screen and (min-width: 740px) and (max-width: 1023px) {
   .header__search-logo {
@@ -572,6 +573,11 @@ html {
 .header__search-logo-img {
   width: 150px;
   color: #fff;
+}
+@media screen and (max-width: 739px) {
+  .header__search-logo-img {
+    width: 110px;
+  }
 }
 .header__search-checkbox:checked ~ .header__search-bar {
   display: flex;
@@ -783,6 +789,7 @@ html {
   display: inline-block;
   padding: 0 12px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 .header__search-cart-wrap:hover .header__search-cart-list {
   display: block;
@@ -1002,6 +1009,7 @@ html {
 /* App container */
 .app__container {
   background-color: #F5F5F5;
+  /* Mobile category */
   /* Product item */
 }
 @media screen and (max-width: 1023px) {
@@ -1011,6 +1019,11 @@ html {
 }
 .app__container-content {
   padding-top: 36px;
+}
+@media screen and (max-width: 1023px) {
+  .app__container-content {
+    padding-top: 8px;
+  }
 }
 .app__container .category {
   border-radius: 2px;
@@ -1118,6 +1131,58 @@ html {
   margin: auto;
   font-size: 1.4rem;
   color: #555;
+}
+.app__container .mobile-category {
+  display: none;
+}
+@media screen and (max-width: 1023px) {
+  .app__container .mobile-category {
+    display: block;
+  }
+}
+.app__container .mobile-category__list {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.app__container .mobile-category__list::-webkit-scrollbar {
+  display: none;
+}
+.app__container .mobile-category__item {
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+.app__container .mobile-category__item:nth-of-type(3n + 1) .mobile-category__link {
+  background-color: #78afd8;
+}
+.app__container .mobile-category__item:nth-of-type(3n + 2) .mobile-category__link {
+  background-color: #76c9db;
+}
+.app__container .mobile-category__item:nth-of-type(3n + 3) .mobile-category__link {
+  background-color: #88cf81;
+}
+.app__container .mobile-category__link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 2rem;
+  padding: 0 6px;
+  text-align: center;
+  width: 110px;
+  height: calc(2rem * 2);
+  overflow: hidden;
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  border-radius: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .app__container .home-product {
   margin-bottom: 10px;
