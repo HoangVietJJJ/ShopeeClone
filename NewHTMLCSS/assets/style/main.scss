@@ -14,12 +14,19 @@
     background-image: linear-gradient(-180deg, #f53d2d, #f63);
 
     @include mobile-and-tablet {
-        height  : $header-height-mobile-tablet;
         position: fixed;
         top     : 0;
         left    : 0;
         right   : 0;
         z-index : 10;
+    }
+
+    @include tablet {
+        height: $header-height-mobile-tablet;
+    }
+
+    @include mobile {
+        height: $header-height-mobile;
     }
 
     &__navbar {
@@ -403,6 +410,7 @@
 
         @include mobile {
             justify-content: space-between;
+            height         : $header-search-mobile;
         }
 
         &-mobile-search {
@@ -467,19 +475,19 @@
             @keyframes mobileSearchSideIn {
                 from {
                     opacity: 0;
-                    top    : calc(#{$header-height-mobile-tablet} / 2);
+                    top    : calc(#{$header-height-mobile} / 2);
                 }
 
                 to {
                     opacity: 1;
-                    top    : $header-height-mobile-tablet;
+                    top    : $header-height-mobile;
                 }
             }
 
             @include mobile {
                 display   : none;
                 position  : fixed;
-                top       : $header-height-mobile-tablet;
+                top       : $header-height-mobile;
                 left      : 0;
                 right     : 0;
                 height    : 46px;
@@ -528,7 +536,7 @@
                 @include mobile {
                     position  : fixed;
                     width     : 100%;
-                    top       : calc(#{$header-height-mobile-tablet} + #{$header-sort-bar-height});
+                    top       : calc(#{$header-height-mobile} + #{$header-sort-bar-height});
                     left      : 0;
                     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
                 }
@@ -766,6 +774,10 @@
                         display: none;
                     }
                 }
+
+                @include mobile {
+                    top: $header-height-mobile;
+                }
             }
 
             &-list--no-item {
@@ -933,6 +945,10 @@
         @include mobile-and-tablet {
             display: flex;
         }
+
+        @include mobile {
+            top: $header-height-mobile;
+        }
     }
 
     &__sort-item {
@@ -984,11 +1000,17 @@
         margin-top: calc(#{$header-height-mobile-tablet} + #{$header-sort-bar-height});
     }
 
+    @include mobile {
+        margin-top: calc(#{$header-height-mobile} + #{$header-sort-bar-height});
+    }
+
     &-content {
         padding-top: 36px;
 
         @include mobile-and-tablet {
-            padding-top: 8px;
+            padding-top : 8px;
+            margin-left : 4px !important;
+            margin-right: 4px !important;
         }
     }
 
@@ -1386,10 +1408,20 @@
     padding-top     : 16px;
     background-color: $white-color;
 
+    &__content {
+        @include mobile {
+            padding: 0 16px !important;
+        }
+    }
+
     &__heading {
         font-size     : 1.4rem;
         text-transform: uppercase;
         color         : $text-color;
+
+        @include mobile {
+            text-align: center;
+        }
     }
 
     &__list {
@@ -1406,6 +1438,10 @@
                 display        : flex;
                 align-items    : center;
 
+                @include mobile {
+                    justify-content: center;
+                }
+
                 &:hover {
                     color: $primary-color;
                 }
@@ -1421,6 +1457,10 @@
     &__download {
         display: flex;
 
+        @include mobile {
+            justify-content: center;
+        }
+
         &-QR {
             width        : 80px;
             border       : 1px solid $border-color;
@@ -1435,9 +1475,18 @@
             justify-content: center;
             gap            : 10px;
 
+            @include mobile {
+                flex: unset;
+            }
+
             &-link {
                 color          : transparent;
                 text-decoration: none;
+
+                @include mobile {
+                    display: block;
+                    padding: 6px 8px;
+                }
             }
 
             &-image {

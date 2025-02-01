@@ -32,12 +32,6 @@
   /* >= Tablet */
   /* Low resolution PC > */
 }
-@media screen and (max-width: 739px) {
-  .row {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
 @media (min-width: 740px) {
   .row {
     margin-left: -8px;
